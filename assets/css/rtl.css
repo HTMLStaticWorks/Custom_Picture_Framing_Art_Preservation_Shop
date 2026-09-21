@@ -1,0 +1,83 @@
+/* ==========================================================================
+   FRAME & PRESERVE - RTL Styles
+   ========================================================================== */
+
+/* Add this to your HTML tag for RTL support: dir="rtl" */
+
+[dir="rtl"] {
+    /* Fonts might need adjustment for RTL languages, e.g. Cairo or Tajawal */
+    font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+[dir="rtl"] .btn::before,
+[dir="rtl"] .nav-link::after {
+    transform-origin: left;
+}
+
+[dir="rtl"] .btn:hover::before,
+[dir="rtl"] .nav-link:hover::after,
+[dir="rtl"] .nav-link.active::after {
+    transform-origin: right;
+}
+
+[dir="rtl"] .btn-arrow {
+    margin-left: 0;
+    margin-right: 0.75rem;
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .btn:hover .btn-arrow {
+    transform: rotate(180deg) translateX(5px);
+}
+
+[dir="rtl"] .me-4 {
+    margin-right: 0 !important;
+    margin-left: 1.5rem !important;
+}
+
+[dir="rtl"] .ms-4 {
+    margin-left: 0 !important;
+    margin-right: 1.5rem !important;
+}
+
+[dir="rtl"] .pe-lg-5 {
+    padding-right: 0 !important;
+    padding-left: 3rem !important;
+}
+
+[dir="rtl"] .ps-lg-5 {
+    padding-left: 0 !important;
+    padding-right: 3rem !important;
+}
+
+[dir="rtl"] .border-start {
+    border-left: 0 !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+[dir="rtl"] .border-end {
+    border-right: 0 !important;
+    border-left: 1px solid var(--border) !important;
+}
+
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+[dir="rtl"] .timeline-step {
+    border-left: none;
+    border-right: 1px solid var(--border);
+    padding-left: 0;
+    padding-right: 2rem;
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .timeline-step::before {
+    left: auto;
+    right: -5px;
+}

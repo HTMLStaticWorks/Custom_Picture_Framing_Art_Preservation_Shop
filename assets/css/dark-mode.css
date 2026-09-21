@@ -1,0 +1,210 @@
+/* ==========================================================================
+   FRAME & PRESERVE - Dark Mode
+   ========================================================================== */
+
+/* Dark Mode Variables based on user preference */
+html[data-theme="dark"] {
+    --bg-color: #1D1A17;
+    /* Use strict primary color as dark bg if possible, or keep #171513 */
+    --surface-color: #292521;
+    /* Dark Text color used as surface */
+    --text: #FAF8F3;
+    /* Warm White */
+    --muted: #D8CEC0;
+    /* Soft Taupe */
+    --border: rgba(250, 248, 243, 0.14);
+    --primary-color: #B89B72;
+    /* Use secondary as primary actions in dark mode for better contrast */
+    --primary: var(--primary-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+}
+
+.site-header.scrolled {
+    background-color: var(--bg-color);
+}
+
+.nav-link {
+    color: var(--text);
+}
+
+.btn {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn::before {
+    background: var(--primary);
+}
+
+.btn:hover {
+    color: var(--bg-color);
+}
+
+.btn,
+.btn-primary {
+    background: var(--primary);
+    color: var(--bg-color);
+}
+
+.btn-primary::before {
+    background: #F5F1E9;
+}
+
+.logo {
+    color: var(--secondary-color) !important;
+}
+
+.logo svg {
+    stroke: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+    background: var(--text);
+}
+
+.bg-surface {
+    background-color: var(--surface-color);
+}
+
+.bg-dark {
+    background-color: #0d0c0a !important;
+    /* Even darker for contrast sections */
+}
+
+.text-dark {
+    color: var(--text) !important;
+}
+
+.border-dark {
+    border-color: var(--border) !important;
+}
+
+.gallery-overlay {
+    background: rgba(23, 21, 19, 0.6);
+}
+
+.form-control,
+.form-select {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.form-control::placeholder {
+    color: var(--muted);
+}
+
+html[data-theme="dark"] .text-muted {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"],
+html[data-theme="dark"] .footer-socials a {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .site-footer .text-muted {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .site-footer p {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .footer-list li {
+    color: var(--muted) !important;
+}
+
+
+
+html[data-theme="dark"] .footer-heading {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .footer-bottom {
+    color: var(--muted) !important;
+}
+
+/* Dark mode FAQ accordion */
+html[data-theme="dark"] .accordion-button {
+    color: var(--text) !important;
+    background-color: var(--surface-color) !important;
+}
+
+html[data-theme="dark"] .accordion-button:not(.collapsed) {
+    color: var(--secondary-color) !important;
+    background-color: var(--surface-color) !important;
+}
+
+html[data-theme="dark"] .accordion-body {
+    color: var(--muted) !important;
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] .accordion-item {
+    border-color: var(--border) !important;
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] .accordion-button::after {
+    filter: invert(1);
+}
+
+/* RTL mode - flip rtl-toggle icon to left */
+[dir="rtl"] .header-actions {
+    flex-direction: row-reverse;
+}
+
+/* Keep button text white in dark mode */
+.btn,
+.btn-primary {
+    color: #ffffff !important;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn:active,
+.btn-primary:active,
+.btn:focus,
+.btn-primary:focus {
+    background-color: #8A7455 !important;
+    border-color: #8A7455 !important;
+    color: #ffffff !important;
+}
+
+
+/* Dark mode button background dark, text white */
+.btn,
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #ffffff !important;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn:active,
+.btn-primary:active,
+.btn:focus,
+.btn-primary:focus {
+    background-color: #8A7455 !important;
+    border-color: #8A7455 !important;
+    color: #ffffff !important;
+}
+
+/* Footer links golden in dark mode */
+.footer a,
+.footer-list a {
+    color: var(--white) !important;
+}
+
+.footer a:hover,
+.footer-list a:hover {
+    color: var(--secondary-color) !important;
+}
