@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Frame & Preserve</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .filter-btn {
+            background: none;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            padding: 0.5rem 1rem;
+            transition: color var(--transition-fast);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .gallery-img-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-img-item img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A17' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'/><circle cx='8.5' cy='8.5' r='1.5'/><polyline points='21 15 16 10 5 21'/></svg>">
+    <link rel="stylesheet" href="assets/css/dark-mode.css" id="theme-css">
+    <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-css" disabled>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo d-flex align-items-center" style="gap:8px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                </svg>
+                F&P Studio
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions d-flex align-items-center gap-2">
+                <button class="btn btn-outline-dark theme-toggle ms-2" aria-label="Toggle Theme" title="Toggle Theme">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="btn btn-outline-dark rtl-toggle ms-1" aria-label="Toggle RTL" title="Toggle RTL">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="8 5 4 9 8 13" />
+                        <line x1="4" y1="9" x2="20" y2="9" />
+                        <polyline points="16 11 20 15 16 19" />
+                        <line x1="20" y1="15" x2="4" y2="15" />
+                    </svg>
+                </button>
+                <a href="quote.html" class="btn btn-primary btn-sm d-none d-lg-block ms-2 ">Request a
+                    Quote</a>
+                <button class="menu-toggle ms-2" aria-label="Toggle Navigation">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <!-- SECTION 1 - HERO -->
+        <section class="hero-standard text-center position-relative bg-dark">
+            <div class="position-absolute inset-0 w-100 h-100" style="z-index: 0; top: 0; left: 0;">
+                <img src="assets/images/gallery-hero.jpg" alt="Framing gallery" class="w-100 h-100 object-fit-cover"
+                    style="object-fit: cover; opacity: 0.4;">
+            </div>
+            <div class="container position-relative py-5" style="z-index: 1;">
+                <span class="eyebrow mb-3 d-block text-light opacity-75">Our Portfolio</span>
+                <h1 class="mb-4 text-white">SELECTED FRAMING WORK.</h1>
+                <p class="lead mx-auto mb-0 text-light opacity-75" style="max-width: 700px;">Explore a curated selection
+                    of our most memorable custom framing and art preservation projects.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 - FILTERABLE GALLERY -->
+        <section class="section-padding border-bottom border-dark">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="d-flex flex-wrap justify-content-center gap-2" id="gallery-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="artwork">Artwork</button>
+                        <button class="filter-btn" data-filter="photography">Photography</button>
+                        <button class="filter-btn" data-filter="memorabilia">Memorabilia</button>
+                        <button class="filter-btn" data-filter="mirrors">Mirrors</button>
+                        <button class="filter-btn" data-filter="shadow-boxes">Shadow Boxes</button>
+                        <button class="filter-btn" data-filter="objects">Objects</button>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="gallery-grid">
+                    <!-- Artwork -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="artwork">
+                        <img src="assets/images/gallery1.jpg" alt="Artwork Frame" class="img-fluid mb-2" loading="lazy">
+                        <span class="eyebrow text-muted">Classic Wood Profile</span>
+                    </div>
+                    <!-- Photography -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="photography">
+                        <img src="assets/images/gallery3.jpg" alt="Photography Frame" class="img-fluid mb-2"
+                            loading="lazy">
+                        <span class="eyebrow text-muted">Minimalist Gallery Frame</span>
+                    </div>
+                    <!-- Memorabilia -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="memorabilia">
+                        <img src="assets/images/gallery4.jpg" alt="memorabilia Frame" class="img-fluid mb-2"
+                            loading="lazy">
+                        <span class="eyebrow text-muted">Heritage Shadow Display</span>
+                    </div>
+                    <!-- Shadow Boxes -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="shadow-boxes">
+                        <img src="assets/images/gallery5.jpg" alt="Shadow Box" class="img-fluid mb-2" loading="lazy">
+                        <span class="eyebrow text-muted">Deep Shadow Box</span>
+                    </div>
+                    <!-- Mirrors -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="mirrors">
+                        <img src="assets/images/gallery6.jpg" alt="Framed Mirror" class="img-fluid mb-2" loading="lazy">
+                        <span class="eyebrow text-muted">Ornate Framed Mirror</span>
+                    </div>
+                    <!-- Objects -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="objects">
+                        <img src="assets/images/gallery7.jpg" alt="object frame" class="img-fluid mb-2" loading="lazy">
+                        <span class="eyebrow text-muted">Oversized Canvas Float Frame</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - FEATURED FRAME DETAIL -->
+        <section class="section-padding bg-surface">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <img src="assets/images/craftmanship.jpg" alt="Frame Corner Detail"
+                            class="img-fluid frame-border p-2" loading="lazy">
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                        <span class="eyebrow">Craftsmanship</span>
+                        <h2 class="mb-4">The Closer You Look.</h2>
+                        <p class="text-muted">Precision-cut corners, seamlessly joined wood grains, and meticulously
+                            balanced mat margins. True quality is found in the details that often go unnoticed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 - GALLERY STORY -->
+        <section class="section-padding">
+            <div class="container text-center">
+                <span class="eyebrow mb-3">Featured Case</span>
+                <h3 class="mb-4" style="max-width: 800px; margin: 0 auto;">"Preserving a 19th-century textile required
+                    an entirely custom deep-set enclosure with UV-filtering acrylic and a hand-finished walnut profile."
+                </h3>
+                <p class="text-muted">— Studio Notes</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5 - CTA -->
+        <section class="section-padding bg-dark text-white text-center">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8">
+                        <span class="eyebrow text-light opacity-75 mb-3 d-block">Commission Your Frame</span>
+                        <h2 class="text-white mb-4">Have a Piece of Your Own?</h2>
+                        <p class="text-light opacity-75 mb-5">Every artwork tells a story. Our expert framers work
+                            closely with you to select materials, mouldings, and glazing that protect and present your
+                            piece exactly as it deserves.</p>
+                        <a href="contact.html" class="btn btn-primary me-3">Contact the Studio</a>
+                    </div>
+                </div>
+                <!-- Preview gallery strip -->
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img src="assets/images/frame1.jpg" alt="Frame sample" class="img-fluid w-100"
+                            style="aspect-ratio: 4/5; object-fit: cover; width: 100%; height: auto; opacity: 0.7;">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img src="assets/images/frame2.jpg" alt="Frame sample" class="img-fluid w-100"
+                            style="aspect-ratio: 4/5; object-fit: cover; width: 100%; height: auto; opacity: 0.7;">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img src="assets/images/frame3.jpg" alt="Frame sample" class="img-fluid w-100"
+                            style="aspect-ratio: 4/5; object-fit: cover; width: 100%; height: auto; opacity: 0.7;">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img src="assets/images/frame4.jpg" alt="Frame sample" class="img-fluid w-100"
+                            style="aspect-ratio: 4/5; object-fit: cover; width: 100%; height: auto; opacity: 0.7;">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         GLOBAL FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5 footer-row">
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6 col-12 pe-lg-4 footer-col">
+                    <a href="index.html" class="logo footer-logo d-flex align-items-center" style="gap:8px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        F&P Studio</a>
+                    <p class="text-muted">A sophisticated custom framing and art preservation studio dedicated to
+                        craftsmanship, quality materials, and protecting the pieces that matter most.</p>
+                    <div class="d-flex gap-3 mt-4 footer-socials">
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.366 18.622 0 12.016 0z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Custom Framing</a></li>
+                        <li><a href="services.html">Conservation Framing</a></li>
+                        <li><a href="services.html">Mirror Cutting</a></li>
+                        <li><a href="services.html">Shadow Boxes</a></li>
+                        <li><a href="services.html">Artwork Mounting</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-list">
+                        <li>123 Gallery Row, Design District</li>
+                        <li>New York, NY 10012</li>
+                        <li class="mt-3"><a href="tel:#">+1 (555) 123-4567</a></li>
+                        <li><a href="mailto:#">studio@frameandpreserve.com</a></li>
+                        <li class="mt-3 text-muted">Tue - Sat: 10am - 6pm</li>
+                        <li class="text-muted">Sun - Mon: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 F&P Studio. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+</body>
+
+</html>
+
+
+

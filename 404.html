@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Frame & Preserve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .error-code {
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-family: var(--font-display);
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .error-code::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border: 1px solid var(--border);
+            animation: frameDraw 2s ease forwards;
+        }
+        @keyframes frameDraw {
+            from { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+            to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+    </style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A17' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'/><circle cx='8.5' cy='8.5' r='1.5'/><polyline points='21 15 16 10 5 21'/></svg>">
+    <link rel="stylesheet" href="assets/css/dark-mode.css" id="theme-css">
+    <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-css" disabled>
+</head>
+<body>
+
+    <main class="error-page bg-surface">
+        <div class="container">
+            <div class="error-code">404</div>
+            <h1 class="mb-4">This Frame Doesn't Exist.</h1>
+            <p class="lead mb-5 text-muted mx-auto" style="max-width: 500px;">The page you're looking for may have been moved or carefully put away.</p>
+            
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="index.html" class="btn btn-primary">Back Home</a>
+                <a href="gallery.html" class="btn">View Gallery</a>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

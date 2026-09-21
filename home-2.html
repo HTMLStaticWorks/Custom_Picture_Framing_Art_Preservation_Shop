@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preserve What Lasts | Frame & Preserve</title>
+    <meta name="description"
+        content="Thoughtful materials and precise craftsmanship. A frame made specifically for the story inside it.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Home 2 Specific Styles */
+        .hero-horizontal {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--header-height);
+        }
+
+        .material-selector .nav-link {
+            color: var(--muted);
+            border-bottom: 2px solid transparent;
+            padding: 1rem 0;
+            margin-right: 2rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .material-selector .nav-link.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-bottom: 3rem;
+            border-left: 1px solid var(--border);
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 9px;
+            height: 9px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-step:last-child {
+            border-left-color: transparent;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            padding: 0.5rem 1rem;
+            transition: color var(--transition-fast);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .gallery-img-item img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+        }
+
+        /* ---- Home-2 responsive: stack sections at 1024px ---- */
+        @media (max-width: 1024px) {
+            /* Design Integration & Process: force full-width columns */
+            .home2-two-col > .col-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-left: 0 !important;
+            }
+        }
+
+        /* Portfolio filter tabs: on tablet/mobile sit below heading, centered */
+        @media (max-width: 991.98px) {
+            #home2-gallery-filters {
+                justify-content: center !important;
+                margin-top: 0.75rem;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A17' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'/><circle cx='8.5' cy='8.5' r='1.5'/><polyline points='21 15 16 10 5 21'/></svg>">
+    <link rel="stylesheet" href="assets/css/dark-mode.css" id="theme-css">
+    <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-css" disabled>
+</head>
+
+<body>
+
+    <!-- GLOBAL HEADER -->
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo d-flex align-items-center" style="gap:8px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                </svg>
+                F&P Studio
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions d-flex align-items-center gap-2">
+                <button class="btn btn-outline-dark theme-toggle ms-2" aria-label="Toggle Theme" title="Toggle Theme">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="btn btn-outline-dark rtl-toggle ms-1" aria-label="Toggle RTL" title="Toggle RTL">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="8 5 4 9 8 13" />
+                      <line x1="4" y1="9" x2="20" y2="9" />
+                      <polyline points="16 11 20 15 16 19" />
+                      <line x1="20" y1="15" x2="4" y2="15" />
+                    </svg>
+                </button>
+                <a href="quote.html" class="btn btn-primary btn-sm d-none d-lg-block ms-2 ">Request a Quote</a>
+                <button class="menu-toggle ms-2" aria-label="Toggle Navigation">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1 - HERO -->
+        <section class="hero-horizontal bg-surface">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-7 order-2 order-lg-1 mt-5 mt-lg-0">
+                        <img src="assets/images/home2-hero.jpg" alt="Framed artwork with large negative space"
+                            class="img-fluid frame-border p-3 w-100" loading="lazy">
+                    </div>
+                    <div class="col-12 col-lg-5 order-1 order-lg-2 ps-lg-5 text-center text-lg-start">
+                        <h1 class="mb-4">PRESERVE WHAT LASTS.</h1>
+                        <p class="lead mb-5">Thoughtful materials. Precise craftsmanship. A frame made specifically for
+                            the story inside it.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                            <a href="contact.html" class="btn btn-primary">
+                                Start Your Quote
+                                <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+    param($m)
+    $m.Value -replace '<div class="row align-items-center">', '<div class="row align-items-center home2-two-col">'
+
+                    <div class="col-12 col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                        <span class="eyebrow">Design Integration</span>
+                        <h2 class="mb-4">More Than Wall Decor.</h2>
+                        <p class="mb-5">We consider the framing process as an extension of your interior design. From
+                            the wall color to the finish of the wood, every detail plays a part.</p>
+
+                        <ul class="list-unstyled mb-5 d-flex flex-column gap-3">
+                            <li class="d-flex justify-content-between border-bottom border-dark pb-2">
+                                <span class="text-muted">Frame Style</span>
+                                <span>Contemporary Minimal</span>
+                            </li>
+                            <li class="d-flex justify-content-between border-bottom border-dark pb-2">
+                                <span class="text-muted">Artwork Proportion</span>
+                                <span>Oversized Mat</span>
+                            </li>
+                            <li class="d-flex justify-content-between border-bottom border-dark pb-2">
+                                <span class="text-muted">Frame Finish</span>
+                                <span>Matte Black Metal</span>
+                            </li>
+                        </ul>
+
+                        <a href="gallery.html" class="btn">Explore Frame Styles</a>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <img src="assets/images/design.jpg" alt="Luxury interior with framed art" class="img-fluid w-100"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - MATERIALS & FINISHES (Interactive) -->
+        <section class="section-padding bg-surface">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <span class="eyebrow">Premium Selections</span>
+                        <h2>Materials & Finishes</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="material-selector d-flex flex-row flex-lg-column gap-2 overflow-auto"
+                            id="materialTabs">
+                            <div class="nav-link active" data-target="wood">Wood Frames</div>
+                            <div class="nav-link" data-target="metal">Metal Profiles</div>
+                            <div class="nav-link" data-target="mat">Mat Boards</div>
+                            <div class="nav-link" data-target="glass">Glazing Options</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <!-- Wood Panel -->
+                        <div class="material-panel active" id="panel-wood">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="assets/images/material1.jpg" alt="Natural Oak Wood" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+                                    <h3 class="mb-3">Natural Oak Finish</h3>
+                                    <p class="text-muted">A timeless, unstained oak that brings warmth and subtle
+                                        texture. Perfect for contemporary photography and modern minimalist interiors.
+                                    </p>
+                                    <p class="small text-uppercase tracking-widest text-dark mt-4">Available in 3
+                                        profiles</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metal Panel -->
+                        <div class="material-panel d-none" id="panel-metal">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="assets/images/material2.jpg" alt="Matte Black Metal" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+                                    <h3 class="mb-3">Matte Black Metal</h3>
+                                    <p class="text-muted">Sleek, architectural aluminum frames with a powder-coated
+                                        matte finish. Offers structural rigidity for large-scale pieces.</p>
+                                    <p class="small text-uppercase tracking-widest text-dark mt-4">Available in 4
+                                        profiles</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mat Boards Panel -->
+                        <div class="material-panel d-none" id="panel-mat">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="assets/images/material3.jpg" alt="Archival Mat Boards" class="img-fluid"
+                                        loading="lazy">
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+                                    <h3 class="mb-3">Archival Mat Boards</h3>
+                                    <p class="text-muted">100% cotton rag and alpha-cellulose mats that protect your
+                                        artwork from acid degradation while providing a clean visual break.</p>
+                                    <p class="small text-uppercase tracking-widest text-dark mt-4">Available in 50+
+                                        colors</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Glazing Panel -->
+                        <div class="material-panel d-none" id="panel-glass">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="assets/images/material4.jpg" alt="Museum Glazing Options"
+                                        class="img-fluid" loading="lazy">
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+                                    <h3 class="mb-3">Museum Glazing</h3>
+                                    <p class="text-muted">Anti-reflective glass and acrylic options that offer up to 99%
+                                        UV protection, ensuring your artwork remains vibrant and glare-free.</p>
+                                    <p class="small text-uppercase tracking-widest text-dark mt-4">3 protection levels
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 - FROM ARTWORK TO FINISHED FRAME (Timeline) -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row home2-two-col">
+                    <div class="col-12 col-lg-4 pe-lg-5 mb-5 mb-lg-0">
+                        <span class="eyebrow">The Process</span>
+                        <h2>From Artwork to Finished Frame</h2>
+                        <p class="text-muted mt-4">A collaborative approach to ensuring your piece is protected and
+                            presented beautifully.</p>
+                        <p class="text-muted mt-3">We believe that every framing project is a partnership between our
+                            artisans and your vision. It requires patience, precision, and a deep understanding of
+                            materials.</p>
+                        <img src="assets/images/process.jpg" alt="Framing Process"
+                            class="img-fluid w-100 mt-4 frame-border object-fit-cover" loading="lazy">
+                    </div>
+                    <div class="col-12 col-lg-7 offset-lg-1">
+                        <div class="timeline">
+                            <div class="timeline-step">
+                                <span class="eyebrow">01</span>
+                                <h4 class="mb-2 mt-1">Bring Your Piece</h4>
+                                <p class="text-muted">We examine the artwork, discuss its significance, and take precise
+                                    measurements.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="eyebrow">02</span>
+                                <h4 class="mb-2 mt-1">Explore Options</h4>
+                                <p class="text-muted">Together, we review frame styles, mat combinations, and glazing
+                                    materials.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="eyebrow">03</span>
+                                <h4 class="mb-2 mt-1">Refine The Design</h4>
+                                <p class="text-muted">Finalizing proportions and ensuring all conservation requirements
+                                    are met.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="eyebrow">04</span>
+                                <h4 class="mb-2 mt-1">Craft The Frame</h4>
+                                <p class="text-muted">Our artisans cut, join, and assemble the frame in our studio with
+                                    meticulous attention to detail.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="eyebrow">05</span>
+                                <h4 class="mb-2 mt-1">Ready To Display</h4>
+                                <p class="text-muted">The finished piece is carefully sealed, wired, and prepared for
+                                    your wall.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 - SELECTED WORK (Gallery) -->
+        <section class="section-padding bg-surface">
+            <div class="container">
+                <div class="row mb-5 align-items-end">
+                    <div class="col-12 col-lg-6 text-center text-lg-start">
+                        <span class="eyebrow">Portfolio</span>
+                        <h2>Selected Work</h2>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+                        <div class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-2" id="home2-gallery-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="art">Art</button>
+                            <button class="filter-btn" data-filter="photography">Photography</button>
+                            <button class="filter-btn" data-filter="objects">Objects</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center" id="home2-gallery-grid">
+                    <!-- Art -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="art">
+                        <img src="assets/images/work1.jpg" alt="Framed abstract art" class="img-fluid mb-3"
+                            loading="lazy">
+                        <span class="eyebrow">Classic Wood</span>
+                    </div>
+                    <!-- Photography -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="photography">
+                        <img src="assets/images/work2.jpg" alt="Framed photography" class="img-fluid mb-3"
+                            loading="lazy">
+                        <span class="eyebrow">Gallery White</span>
+                    </div>
+                    <!-- Objects -->
+                    <div class="col-12 col-md-6 col-lg-4 gallery-img-item text-center" data-category="objects">
+                        <img src="assets/images/work3.jpg" alt="Shadow box" class="img-fluid mb-3" loading="lazy">
+                        <span class="eyebrow">Shadow Box</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 - FINAL QUOTE CTA -->
+        <section class="section-padding text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <span class="eyebrow mb-3 d-block">Next Steps</span>
+                        <h2 class="mb-4">Let's Find the Right Frame.</h2>
+                        <p class="lead mb-5 mx-auto" style="max-width: 600px;">Bring your piece, your measurements, or simply
+                            your idea. We'll help you explore the possibilities.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="quote.html" class="btn btn-primary">Request a Quote
+                                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="contact.html" class="btn">Contact the Studio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER (Same as Home 1) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5 footer-row">
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6 col-12 pe-lg-4 footer-col">
+                    <a href="index.html" class="logo footer-logo d-flex align-items-center" style="gap:8px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        F&P Studio</a><p class="text-muted">A sophisticated custom framing and art preservation studio dedicated to
+                        craftsmanship, quality materials, and protecting the pieces that matter most.</p>
+                    <div class="d-flex gap-3 mt-4 footer-socials">
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.366 18.622 0 12.016 0z" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Custom Framing</a></li>
+                        <li><a href="services.html">Conservation Framing</a></li>
+                        <li><a href="services.html">Mirror Cutting</a></li>
+                        <li><a href="services.html">Shadow Boxes</a></li>
+                        <li><a href="services.html">Artwork Mounting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-list">
+                        <li>123 Gallery Row, Design District</li>
+                        <li>New York, NY 10012</li>
+                        <li class="mt-3"><a href="tel:#">+1 (555) 123-4567</a></li>
+                        <li><a href="mailto:#">studio@frameandpreserve.com</a></li>
+                        <li class="mt-3 text-muted">Tue - Sat: 10am - 6pm</li>
+                        <li class="text-muted">Sun - Mon: Closed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 F&P Studio. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

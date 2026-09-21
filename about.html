@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Frame & Preserve</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A17' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'/><circle cx='8.5' cy='8.5' r='1.5'/><polyline points='21 15 16 10 5 21'/></svg>">
+    <link rel="stylesheet" href="assets/css/dark-mode.css" id="theme-css">
+    <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-css" disabled>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo d-flex align-items-center" style="gap:8px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                </svg>
+                F&P Studio
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions d-flex align-items-center gap-2">
+                <button class="btn btn-outline-dark theme-toggle ms-2" aria-label="Toggle Theme" title="Toggle Theme">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="btn btn-outline-dark rtl-toggle ms-1" aria-label="Toggle RTL" title="Toggle RTL">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="8 5 4 9 8 13" />
+                        <line x1="4" y1="9" x2="20" y2="9" />
+                        <polyline points="16 11 20 15 16 19" />
+                        <line x1="20" y1="15" x2="4" y2="15" />
+                    </svg>
+                </button>
+                <a href="quote.html" class="btn btn-primary btn-sm d-none d-lg-block ms-2 ">Request a
+                    Quote</a>
+                <button class="menu-toggle ms-2" aria-label="Toggle Navigation">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+        <!-- SECTION 1 - HERO -->
+        <section class="hero-standard text-center position-relative bg-dark">
+            <div class="position-absolute inset-0 w-100 h-100" style="z-index: 0; top: 0; left: 0;">
+                <img src="assets/images/abt-hero.jpg" alt="Studio Workshop"
+                    class="w-100 h-100 object-fit-cover opacity-50" style="object-fit: cover; opacity: 0.4;">
+            </div>
+            <div class="container position-relative py-5" style="z-index: 1;">
+                <span class="eyebrow mb-3 text-light opacity-75">Our Story</span>
+                <h1 class="mb-4 text-white">CRAFTED AROUND WHAT MATTERS.</h1>
+                <p class="lead mx-auto mb-0 text-light opacity-75" style="max-width: 700px;">A dedicated studio focusing
+                    on the intersection of traditional craftsmanship and contemporary presentation.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 - OUR APPROACH -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 pe-lg-5">
+                        <span class="eyebrow">Philosophy</span>
+                        <h2 class="mb-4">Our Approach</h2>
+                        <p class="mb-4">Good framing doesn't compete with the artwork. It gives it room to speak. We
+                            begin every project with a personal consultation to understand the piece and its intended
+                            environment.</p>
+                        <p>Through careful measurement, thoughtful material selection, and an eye for visual balance, we
+                            craft enclosures that offer both protection and aesthetic elevation.</p>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0">
+                        <img src="assets/images/philosophy.jpg" alt="Artisan measuring" class="img-fluid"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - THE STUDIO -->
+        <section class="section-padding bg-surface">
+            <div class="container">
+                <div class="row mb-5 text-center">
+                    <div class="col-12">
+                        <span class="eyebrow">Workspace</span>
+                        <h2>The Studio</h2>
+                    </div>
+                </div>
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-7">
+                        <img src="assets/images/studio1.jpg" alt="Frame cutting"
+                            class="img-fluid w-100 h-100 object-fit-cover" loading="lazy">
+                    </div>
+                    <div class="col-md-5 d-flex flex-column gap-4">
+                        <img src="assets/images/studio2.jpg" alt="Mat preparation"
+                            class="img-fluid w-100 object-fit-cover" style="flex: 1; min-height: 200px;" loading="lazy">
+                        <div class="p-4 border border-dark d-flex flex-column justify-content-center" style="flex: 1;">
+                            <h4 class="mb-3">Precision Workshop</h4>
+                            <p class="text-muted mb-0">From meticulous frame cutting to exact mat preparation and
+                                archival mounting, every step happens in-house under strict quality controls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 - MATERIALS & CARE -->
+        <section class="section-padding text-center">
+            <div class="container">
+                <span class="eyebrow mb-3">Preservation</span>
+                <h2 class="mb-5">Materials & Care</h2>
+                <div class="row justify-content-center g-5">
+                    <div class="col-md-4">
+                        <div class="border-top border-dark pt-4">
+                            <h4>Acid-Free Materials</h4>
+                            <p class="text-muted mt-3">We utilize archival, acid-free mats and backing boards to prevent
+                                yellowing and degradation of your artwork.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border-top border-dark pt-4">
+                            <h4>UV-Conscious Glazing</h4>
+                            <p class="text-muted mt-3">Offering museum-inspired glazing options that filter up to 99% of
+                                harmful UV rays, protecting colors from fading.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border-top border-dark pt-4">
+                            <h4>Reversible Mounting</h4>
+                            <p class="text-muted mt-3">Employing archival mounting approaches that securely hold the
+                                piece while remaining completely reversible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 - CTA -->
+        <section class="section-padding bg-dark text-white text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <span class="eyebrow text-light opacity-75 mb-3 d-block">Start Your Project</span>
+                        <h2 class="display-4 text-white mb-4">Bring Us Something Worth Preserving.</h2>
+                        <p class="lead text-light opacity-75 mb-5">Whether it's a family heirloom, a commissioned
+                            artwork, or a treasured photograph — we'll protect it with the care and craftsmanship it
+                            deserves. Every piece is unique, and so is every frame we build.</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-3">
+                            <a href="quote.html" class="btn btn-primary">Request a Quote
+                                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5 footer-row">
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6 col-12 pe-lg-4 footer-col">
+                    <a href="index.html" class="logo footer-logo d-flex align-items-center" style="gap:8px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        F&P Studio</a>
+                    <p class="text-muted">A sophisticated custom framing and art preservation studio dedicated to
+                        craftsmanship, quality materials, and protecting the pieces that matter most.</p>
+                    <div class="d-flex gap-3 mt-4 footer-socials">
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.366 18.622 0 12.016 0z" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Custom Framing</a></li>
+                        <li><a href="services.html">Conservation Framing</a></li>
+                        <li><a href="services.html">Mirror Cutting</a></li>
+                        <li><a href="services.html">Shadow Boxes</a></li>
+                        <li><a href="services.html">Artwork Mounting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="col-lg-3 col-md-6 col-12 footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-list">
+                        <li>123 Gallery Row, Design District</li>
+                        <li>New York, NY 10012</li>
+                        <li class="mt-3"><a href="tel:#">+1 (555) 123-4567</a></li>
+                        <li><a href="mailto:#">studio@frameandpreserve.com</a></li>
+                        <li class="mt-3 text-muted">Tue - Sat: 10am - 6pm</li>
+                        <li class="text-muted">Sun - Mon: Closed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 F&P Studio. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+</body>
+
+</html>
+
