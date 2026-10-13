@@ -27,9 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('no-scroll');
         });
 
+        // Close menu when clicking any nav link on mobile/tablet
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1120) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+
         // Reset on resize
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
+            if (window.innerWidth > 1120) {
                 navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
                 document.body.classList.remove('no-scroll');
@@ -224,11 +235,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelector('.nav-links');
         const themeToggle = document.querySelector('.theme-toggle');
         const rtlToggle = document.querySelector('.rtl-toggle');
-        // Find the quote button by href since we removed the extra classes
-        const quoteBtn = document.querySelector('.header-actions a[href="quote.html"]');
+        const quoteBtn = document.querySelector('.btn-quote-desktop') || document.querySelector('.header-actions a[href="quote.html"]') || document.querySelector('.nav-mobile-controls .btn-primary-mobile');
         const menuToggle = document.querySelector('.menu-toggle');
         
-        if (window.innerWidth <= 1024) {
+        if (!headerActions || !navLinks) return;
+
+        if (window.innerWidth <= 1120) {
             if (themeToggle && themeToggle.parentElement !== navLinks) {
                 let mobileControls = document.querySelector('.nav-mobile-controls');
                 if (!mobileControls) {
@@ -236,22 +248,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileControls.className = 'nav-mobile-controls';
                     navLinks.appendChild(mobileControls);
                 }
-                mobileControls.appendChild(themeToggle);
-                mobileControls.appendChild(rtlToggle);
+                if (themeToggle) mobileControls.appendChild(themeToggle);
+                if (rtlToggle) mobileControls.appendChild(rtlToggle);
                 if (quoteBtn) {
-                    quoteBtn.classList.remove('d-none', 'd-lg-block', 'btn-sm');
+                    quoteBtn.classList.remove('d-none', 'd-lg-block', 'btn-sm', 'btn-quote-desktop');
                     quoteBtn.classList.add('btn-primary-mobile');
                     mobileControls.appendChild(quoteBtn);
                 }
             }
         } else {
             if (themeToggle && themeToggle.parentElement !== headerActions) {
-                headerActions.insertBefore(themeToggle, menuToggle);
-                headerActions.insertBefore(rtlToggle, menuToggle);
-                if (quoteBtn) {
-                    quoteBtn.classList.add('d-none', 'd-lg-block', 'btn-sm');
-                    quoteBtn.classList.remove('btn-primary-mobile');
-                    headerActions.insertBefore(quoteBtn, menuToggle);
+                if (menuToggle) {
+                    if (themeToggle) headerActions.insertBefore(themeToggle, menuToggle);
+                    if (rtlToggle) headerActions.insertBefore(rtlToggle, menuToggle);
+                    if (quoteBtn) {
+                        quoteBtn.classList.add('btn-quote-desktop');
+                        quoteBtn.classList.remove('btn-primary-mobile');
+                        headerActions.insertBefore(quoteBtn, menuToggle);
+                    }
+                } else {
+                    if (themeToggle) headerActions.appendChild(themeToggle);
+                    if (rtlToggle) headerActions.appendChild(rtlToggle);
+                    if (quoteBtn) {
+                        quoteBtn.classList.add('btn-quote-desktop');
+                        quoteBtn.classList.remove('btn-primary-mobile');
+                        headerActions.appendChild(quoteBtn);
+                    }
                 }
                 const mobileControls = document.querySelector('.nav-mobile-controls');
                 if (mobileControls) {
