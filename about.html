@@ -21,8 +21,8 @@
     <!-- HEADER -->
     <header class="site-header" id="header">
         <div class="container header-container">
-            <a href="index.html" class="logo d-flex align-items-center" style="gap:8px;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <a href="index.html" class="logo">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                     <circle cx="8.5" cy="8.5" r="1.5" />
                     <polyline points="21 15 16 10 5 21" />
@@ -38,17 +38,16 @@
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    
                 </ul>
             </nav>
 
-            <div class="header-actions d-flex align-items-center gap-2">
-                <button class="btn btn-outline-dark theme-toggle ms-2" aria-label="Toggle Theme" title="Toggle Theme">
+            <div class="header-actions">
+                <button class="btn btn-outline-dark theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button class="btn btn-outline-dark rtl-toggle ms-1" aria-label="Toggle RTL" title="Toggle RTL">
+                <button class="btn btn-outline-dark rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="8 5 4 9 8 13" />
@@ -57,9 +56,8 @@
                         <line x1="20" y1="15" x2="4" y2="15" />
                     </svg>
                 </button>
-                <a href="quote.html" class="btn btn-primary btn-sm d-none d-lg-block ms-2 ">Request a
-                    Quote</a>
-                <button class="menu-toggle ms-2" aria-label="Toggle Navigation">
+                <a href="quote.html" class="btn btn-primary btn-sm btn-quote-desktop">Request a Quote</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation">
                     <span class="menu-icon"></span>
                 </button>
             </div>
@@ -102,8 +100,43 @@
             </div>
         </section>
 
+        <!-- SECTION 2.5 - OUR CRAFT & EXPERTISE -->
+        <section class="section-padding bg-surface border-top border-bottom border-dark-subtle">
+            <div class="container">
+                <div class="row mb-5 text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <span class="eyebrow">Artisanal Mastery</span>
+                        <h2 class="mb-3">Our Craft & Expertise</h2>
+                        <p class="text-muted">Combining centuries of traditional European woodworking joinery with modern museum-certified conservation science to safeguard your artwork.</p>
+                    </div>
+                </div>
+                <div class="craft-expertise-grid">
+                    <div class="craft-expertise-card">
+                        <span class="craft-card-number">01 / PRESERVATION</span>
+                        <h3 class="craft-card-title">Archival Glazing Science</h3>
+                        <p class="craft-card-desc">We specify 99% UV-blocking Optium museum acrylic and anti-reflective water-white glass to shield delicate pigments against photochemical fading without color distortion.</p>
+                    </div>
+                    <div class="craft-expertise-card">
+                        <span class="craft-card-number">02 / WOODWORKING</span>
+                        <h3 class="craft-card-title">Hand-Milled Hardwood Joinery</h3>
+                        <p class="craft-card-desc">Every timber frame is milled from sustainably sourced White Oak, Black Walnut, or Maple, and internally reinforced with hand-cut timber splines for eternal joint strength.</p>
+                    </div>
+                    <div class="craft-expertise-card">
+                        <span class="craft-card-number">03 / CONSERVATION</span>
+                        <h3 class="craft-card-title">Reversible Archival Hinging</h3>
+                        <p class="craft-card-desc">Museum-standard Japanese kozo mulberry paper hinges applied with purified wheat starch paste hold artworks securely while remaining 100% reversible with zero chemical residue.</p>
+                    </div>
+                    <div class="craft-expertise-card">
+                        <span class="craft-card-number">04 / ARCHITECTURE</span>
+                        <h3 class="craft-card-title">8-Ply Cotton Matting & Spacers</h3>
+                        <p class="craft-card-desc">Pure alpha-cellulose and 100% cotton rag matboards hand-beveled with exact 45-degree cuts, combined with interior acid-free spacers to prevent paper buckling and glass contact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 3 - THE STUDIO -->
-        <section class="section-padding bg-surface">
+        <section class="section-padding">
             <div class="container">
                 <div class="row mb-5 text-center">
                     <div class="col-12">
@@ -123,6 +156,66 @@
                             <h4 class="mb-3">Precision Workshop</h4>
                             <p class="text-muted mb-0">From meticulous frame cutting to exact mat preparation and
                                 archival mounting, every step happens in-house under strict quality controls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3.5 - MEET THE FRAMING TEAM -->
+        <section class="section-padding bg-surface border-top border-bottom border-dark-subtle">
+            <div class="container">
+                <div class="row mb-5 text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <span class="eyebrow">The Artisans Behind The Frame</span>
+                        <h2 class="mb-3">Meet the Framing Team</h2>
+                        <p class="text-muted">Our master framers, art conservators, and design specialists bring decades of combined museum and atelier experience to every piece.</p>
+                    </div>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Member 1: Julian Vance -->
+                    <div class="team-card">
+                        <div class="team-image-wrapper">
+                            <img src="assets/images/team-julian.jpg" alt="Julian Vance, Master Guild Framer" loading="lazy">
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-member-role">Master Guild Framer &amp; Founder</span>
+                            <h3 class="team-member-name">Julian Vance</h3>
+                            <p class="team-member-bio">With over 22 years in bespoke fine woodworking, Julian trained under European guild framers in Florence and London before founding F&amp;P Studio. He oversees all hardwood milling and spline construction.</p>
+                            <div class="team-specialty-badge">
+                                Specialty: Custom Hardwood Milling &amp; Spline Joinery
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Elena Rostova -->
+                    <div class="team-card">
+                        <div class="team-image-wrapper">
+                            <img src="assets/images/team-elena.jpg" alt="Elena Rostova, Head of Conservation" loading="lazy">
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-member-role">Head of Conservation</span>
+                            <h3 class="team-member-name">Elena Rostova</h3>
+                            <p class="team-member-bio">Formerly senior conservator at institutional collections, Elena holds an MA in Art Conservation. She directs all archival mounting, textile stabilization, and environmental diagnostic protocols.</p>
+                            <div class="team-specialty-badge">
+                                Specialty: Reversible Kozo Hinging &amp; Textile Conservation
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 3: Marcus Chen -->
+                    <div class="team-card">
+                        <div class="team-image-wrapper">
+                            <img src="assets/images/team-marcus.jpg" alt="Marcus Chen, Design Director" loading="lazy">
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-member-role">Design Director &amp; Curation Lead</span>
+                            <h3 class="team-member-name">Marcus Chen</h3>
+                            <p class="team-member-bio">An architect by training with a background in gallery curation, Marcus collaborates with collectors, artists, and interior designers to determine proportions, finishes, and spatial harmony.</p>
+                            <div class="team-specialty-badge">
+                                Specialty: Large-Scale Contemporary Works &amp; Spatial Curation
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,6 +248,58 @@
                             <p class="text-muted mt-3">Employing archival mounting approaches that securely hold the
                                 piece while remaining completely reversible.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4.5 - WHY CUSTOMERS CHOOSE US -->
+        <section class="section-padding bg-surface border-top border-dark-subtle">
+            <div class="container">
+                <div class="row mb-5 text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <span class="eyebrow">The F&amp;P Distinction</span>
+                        <h2 class="mb-3">Why Customers Choose Us</h2>
+                        <p class="text-muted">From distinguished private collectors to families framing irreplaceable heirlooms, clients trust our studio for uncompromising quality, discretion, and care.</p>
+                    </div>
+                </div>
+
+                <div class="why-choose-grid">
+                    <div class="why-choose-card">
+                        <h4>100% In-House Atelier Care</h4>
+                        <p>Your piece never leaves our climate-controlled studio. From initial intake inspection to cutting, glazing, and dust sealing, every procedure is executed directly by our team.</p>
+                    </div>
+                    <div class="why-choose-card">
+                        <h4>Certified Museum Standards</h4>
+                        <p>We adhere strictly to Library of Congress and Fine Art Trade Guild preservation standards. Every adhesive, board, tape, and barrier foil is non-acidic and conservation grade.</p>
+                    </div>
+                    <div class="why-choose-card">
+                        <h4>Personal One-on-One Consultations</h4>
+                        <p>We work collaboratively with you in our showroom or via virtual design review, evaluating natural light angles, mat proportions, and physical frame moulding samples.</p>
+                    </div>
+                    <div class="why-choose-card">
+                        <h4>Lifetime Craftsmanship Warranty</h4>
+                        <p>We guarantee all structural frame joints and mounting integrity against workmanship defects for the life of the piece. Your treasured artwork is protected for generations.</p>
+                    </div>
+                </div>
+
+                <!-- Trust Statistics Ribbon -->
+                <div class="trust-stats-ribbon">
+                    <div>
+                        <div class="trust-stat-num">15+</div>
+                        <div class="trust-stat-text">Years Mastery</div>
+                    </div>
+                    <div>
+                        <div class="trust-stat-num">5,200+</div>
+                        <div class="trust-stat-text">Works Preserved</div>
+                    </div>
+                    <div>
+                        <div class="trust-stat-num">99.9%</div>
+                        <div class="trust-stat-text">Client Satisfaction</div>
+                    </div>
+                    <div>
+                        <div class="trust-stat-num">100%</div>
+                        <div class="trust-stat-text">Reversible Methods</div>
                     </div>
                 </div>
             </div>

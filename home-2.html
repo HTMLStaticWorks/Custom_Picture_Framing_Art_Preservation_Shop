@@ -119,8 +119,8 @@
     <!-- GLOBAL HEADER -->
     <header class="site-header" id="header">
         <div class="container header-container">
-            <a href="index.html" class="logo d-flex align-items-center" style="gap:8px;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <a href="index.html" class="logo">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                     <circle cx="8.5" cy="8.5" r="1.5" />
                     <polyline points="21 15 16 10 5 21" />
@@ -136,17 +136,16 @@
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    
                 </ul>
             </nav>
 
-            <div class="header-actions d-flex align-items-center gap-2">
-                <button class="btn btn-outline-dark theme-toggle ms-2" aria-label="Toggle Theme" title="Toggle Theme">
+            <div class="header-actions">
+                <button class="btn btn-outline-dark theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button class="btn btn-outline-dark rtl-toggle ms-1" aria-label="Toggle RTL" title="Toggle RTL">
+                <button class="btn btn-outline-dark rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="8 5 4 9 8 13" />
                       <line x1="4" y1="9" x2="20" y2="9" />
@@ -154,8 +153,8 @@
                       <line x1="20" y1="15" x2="4" y2="15" />
                     </svg>
                 </button>
-                <a href="quote.html" class="btn btn-primary btn-sm d-none d-lg-block ms-2 ">Request a Quote</a>
-                <button class="menu-toggle ms-2" aria-label="Toggle Navigation">
+                <a href="quote.html" class="btn btn-primary btn-sm btn-quote-desktop">Request a Quote</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation">
                     <span class="menu-icon"></span>
                 </button>
             </div>
@@ -163,36 +162,94 @@
     </header>
 
     <main>
-        <!-- SECTION 1 - HERO -->
-        <section class="hero-horizontal bg-surface">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-7 order-2 order-lg-1 mt-5 mt-lg-0">
-                        <img src="assets/images/home2-hero.jpg" alt="Framed artwork with large negative space"
-                            class="img-fluid frame-border p-3 w-100" loading="lazy">
-                    </div>
-                    <div class="col-12 col-lg-5 order-1 order-lg-2 ps-lg-5 text-center text-lg-start">
-                        <h1 class="mb-4">PRESERVE WHAT LASTS.</h1>
-                        <p class="lead mb-5">Thoughtful materials. Precise craftsmanship. A frame made specifically for
-                            the story inside it.</p>
-                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                            <a href="contact.html" class="btn btn-primary">
-                                Start Your Quote
-                                <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        <!-- ==========================================
+             SECTION 1 - HERO: THE ATELIER EXHIBITION SHOWCASE
+             ========================================== -->
+        <section class="home2-hero-curated">
+            <div class="container position-relative">
+                <div class="row align-items-center g-5">
+                    <!-- Left Column: Editorial Curation & Specs -->
+                    <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
+                        <div class="home2-curated-badge-strip">
+                            <span>Edition 02</span>
+                            <span>&bull;</span>
+                            <span>The Archival Atelier</span>
+                        </div>
+
+                        <h1 class="home2-curated-title">
+                            ARTISTRY PRESERVED.<br>
+                            <span class="font-serif-italic">Elegance</span> FRAMED FOR GENERATIONS.
+                        </h1>
+
+                        <p class="home2-curated-lead">
+                            Where museum conservation science meets bespoke architectural design. Every piece is precision-milled from sustainable solid hardwoods and protected by 99% UV-filtering Optium glazing.
+                        </p>
+
+                        <!-- Archival Specification Highlights -->
+                        <div class="home2-curated-specs-grid">
+                            <div class="home2-curated-spec-item">
+                                <span class="home2-curated-spec-val">99% UV</span>
+                                <span class="home2-curated-spec-lbl">Museum Glazing</span>
+                            </div>
+                            <div class="home2-curated-spec-item">
+                                <span class="home2-curated-spec-val">100% Rag</span>
+                                <span class="home2-curated-spec-lbl">Acid-Free 8-Ply Mat</span>
+                            </div>
+                            <div class="home2-curated-spec-item">
+                                <span class="home2-curated-spec-val">Hand-Milled</span>
+                                <span class="home2-curated-spec-lbl">Timber Spline Joints</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start align-items-center">
+                            <a href="quote.html" class="btn btn-primary">
+                                Start Archival Commission
+                                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </a>
+                            <a href="gallery.html" class="btn btn-outline-dark">Explore Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Distinctive Multi-Frame Gallery Composition -->
+                    <div class="col-12 col-lg-7 order-1 order-lg-2">
+                        <div class="home2-gallery-composition">
+                            <!-- Main Exhibition Frame featuring three balanced museum pieces -->
+                            <div class="home2-main-exhibition-frame">
+                                <img src="assets/images/home2-gallery-hero.jpg"
+                                    alt="Gallery exhibition wall with three museum-framed masterworks"
+                                    loading="eager">
+                            </div>
+
+                            <!-- Overlapping Archival Provenance Certificate Tag -->
+                            <div class="home2-provenance-tag">
+                                <div class="provenance-tag-header">
+                                    <span class="provenance-tag-dot"></span>
+                                    <span class="provenance-tag-label">CONSERVATION GRADE</span>
+                                </div>
+                                <div class="provenance-tag-detail">
+                                    Optium Acrylic&reg; &bull; 8-Ply Cotton Rag &bull; Hand-Splined Walnut
+                                </div>
+                            </div>
+
+                            <!-- Floating Joinery Detail Inset Thumbnail -->
+                            <div class="home2-craft-thumbnail-badge">
+                                <img src="assets/images/craftmanship.jpg" alt="Frame corner spline detail">
+                                <span class="home2-craft-thumbnail-caption">Corner Splines</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 
-    param($m)
-    $m.Value -replace '<div class="row align-items-center">', '<div class="row align-items-center home2-two-col">'
-
+        <!-- SECTION 2 - DESIGN INTEGRATION -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row align-items-center home2-two-col">
                     <div class="col-12 col-lg-5 pe-lg-5 mb-5 mb-lg-0">
                         <span class="eyebrow">Design Integration</span>
                         <h2 class="mb-4">More Than Wall Decor.</h2>
