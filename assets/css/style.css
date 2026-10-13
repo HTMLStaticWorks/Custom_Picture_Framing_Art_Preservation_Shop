@@ -1113,6 +1113,12 @@ a:hover {
   border-radius: 3px;
   z-index: 11;
   text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.home2-craft-thumbnail-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
 }
 
 .home2-craft-thumbnail-badge img {
@@ -1134,7 +1140,19 @@ a:hover {
 
 @media (max-width: 991.98px) {
   .home2-craft-thumbnail-badge {
-    display: none;
+    display: block;
+    top: -16px;
+    right: 12px;
+    width: 120px;
+    padding: 7px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  .home2-craft-thumbnail-badge img {
+    height: 70px;
+    margin-bottom: 5px;
+  }
+  .home2-craft-thumbnail-caption {
+    font-size: 0.62rem;
   }
   .home2-provenance-tag {
     position: static;
@@ -1144,6 +1162,40 @@ a:hover {
   .home2-curated-specs-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .home2-craft-thumbnail-badge {
+    top: -12px;
+    right: 8px;
+    width: 100px;
+    padding: 5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  }
+  .home2-craft-thumbnail-badge img {
+    height: 56px;
+    margin-bottom: 4px;
+  }
+  .home2-craft-thumbnail-caption {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 380px) {
+  .home2-craft-thumbnail-badge {
+    top: -10px;
+    right: 6px;
+    width: 86px;
+    padding: 4px;
+  }
+  .home2-craft-thumbnail-badge img {
+    height: 48px;
+    margin-bottom: 3px;
+  }
+  .home2-craft-thumbnail-caption {
+    font-size: 0.52rem;
   }
 }
 
@@ -1221,7 +1273,7 @@ a:hover {
 .team-image-wrapper {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   background: var(--surface-color);
 }
 
@@ -1229,6 +1281,8 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
+  transform-origin: top center;
   transition: transform var(--transition-smooth);
 }
 
@@ -1278,8 +1332,28 @@ a:hover {
 
 @media (max-width: 991.98px) {
   .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 651px) {
+  .team-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .team-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

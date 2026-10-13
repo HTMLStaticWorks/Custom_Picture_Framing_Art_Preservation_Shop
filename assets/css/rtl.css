@@ -81,3 +81,29 @@
     left: auto;
     right: -5px;
 }
+
+[dir="rtl"] .home2-craft-thumbnail-badge {
+    right: auto;
+    left: -15px;
+}
+
+@media (max-width: 991.98px) {
+    [dir="rtl"] .home2-craft-thumbnail-badge {
+        right: auto;
+        left: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    [dir="rtl"] .home2-craft-thumbnail-badge {
+        right: auto;
+        left: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    [dir="rtl"] .home2-craft-thumbnail-badge {
+        right: auto;
+        left: 6px;
+    }
+}
